@@ -29,6 +29,7 @@ function Lyrics() {
                     )
                 }
             </div>
+            <a href="/">Back</a>
         </>
     )
 }
