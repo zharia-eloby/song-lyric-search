@@ -1,7 +1,11 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, Navigate } from "react-router-dom";
 
 function Lyrics() {
-    const { state: { songLyrics, artist, songTitle } = {} } = useLocation();
+    const location = useLocation();
+    if (!location.state) {
+        return <Navigate to="/" />
+    }
+    const { state: { songLyrics, artist, songTitle } = {}} = location;
     
     return (
         <>
