@@ -1,4 +1,5 @@
 import { useLocation, Navigate } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 
 function Lyrics() {
     const location = useLocation();
@@ -9,7 +10,9 @@ function Lyrics() {
     
     return (
         <>
-            <h1>Artist: { artist }, Song: { songTitle }</h1>
+            <Button href="/">Back</Button>
+            <h1>{ songTitle }</h1>
+            <h2>{ artist }</h2>
             <div>
                 {
                     songLyrics.map((line, index) =>
@@ -19,7 +22,6 @@ function Lyrics() {
                     )
                 }
             </div>
-            <a href="/">Back</a>
         </>
     )
 }
