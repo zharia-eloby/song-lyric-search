@@ -29,7 +29,7 @@ function Home() {
 
         axios.get(`https://api.lyrics.ovh/v1/${artist}/${songTitle}`).then((response) => {
             const songLyrics = response.data.lyrics.split(/\n\n|\r\n/);
-            navigate(`/${artist}/${songTitle}`, { state: { songLyrics, artist, songTitle }});
+            navigate(`/lyrics`, { state: { songLyrics, artist, songTitle }});
         }).catch((err) => {
             if (err.status == 404) {
                 setErrorState('not found');

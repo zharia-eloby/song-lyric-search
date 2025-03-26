@@ -12,7 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<BaseLayout />}>
             <Route index element={<Home />} />
-            <Route path=':artist/:song_title' element={<Lyrics />} />
+            <Route path='lyrics' element={<Lyrics />} />
             <Route path='*' element={<Error404 />} />
           </Route>
         </Routes>
