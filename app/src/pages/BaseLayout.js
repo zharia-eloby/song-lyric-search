@@ -9,7 +9,7 @@ function Header() {
         <header className="p-3">
             <Navbar>
                 <Navbar.Brand className="fs-4">
-                    SongSearch... name pending :)
+                    LyricSearch
                 </Navbar.Brand>
             </Navbar>
         </header>

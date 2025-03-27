@@ -6,6 +6,12 @@ import Button from "react-bootstrap/Button";
 import { Container } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 
+function formatLyrics(lyricsArr) {
+    const newArr = lyricsArr.split(/\n\n|\r\n/);
+    console.log(newArr);
+    return newArr;
+}
+
 function ErrorMessage(props) {
     return (
         <>
@@ -25,7 +31,7 @@ function Home() {
 
         if (artist !== '' && songTitle !== '') {
             axios.get(`https://api.lyrics.ovh/v1/${artist}/${songTitle}`).then((response) => {
-                const songLyrics = response.data.lyrics.split(/\n\n|\r\n/);
+                const songLyrics = formatLyrics(response.data.lyrics);
                 navigate(`/lyrics`, { state: { songLyrics, artist, songTitle }});
             }).catch((err) => {
                 if (err.status) {
