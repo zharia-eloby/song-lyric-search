@@ -42,6 +42,9 @@ function Home() {
     return (
         <div>
             <h1 className="text-center fw-bold">Find song lyrics</h1>
+            <p className="fs-5 fst-italic text-center">
+                Enter an artist and song title and we'll see if we can find the lyrics!
+            </p>
             <Form noValidate validated={error} onSubmit={handleSubmit}>
                 {
                     error == 404 &&
