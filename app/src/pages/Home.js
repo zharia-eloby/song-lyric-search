@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import { Container } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 
 function ErrorMessage(props) {
     return (
@@ -46,6 +48,14 @@ function Home() {
                     <Form.Control type="text" onChange={(e) => setArtist(e.target.value)} required />
                     <Form.Control.Feedback type="invalid">Please enter an artist.</Form.Control.Feedback>
                 </Form.Group>
+
+                <Container fluid className="separator">
+                    <Row>
+                        <div className="col col-5 px-0"><hr></hr></div>
+                        <div className="col col-2 text-center">AND</div>
+                        <div className="col col-5 px-0"><hr></hr></div>
+                    </Row>
+                </Container>
 
                 <Form.Group className="mb-3" controlId="songTitleGroup">
                     <Form.Label>Song Title</Form.Label>
