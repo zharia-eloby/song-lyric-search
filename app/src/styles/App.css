@@ -6,7 +6,11 @@ header, footer {
   background-color: lightskyblue;
 }
 
-footer > p {
+p {
   margin: 0px;
   line-height: 2em;
+}
+
+.error-message {
+  color: red;
 }

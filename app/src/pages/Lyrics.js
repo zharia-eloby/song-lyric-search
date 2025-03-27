@@ -1,4 +1,4 @@
-import { useLocation, Navigate } from "react-router-dom";
+import { useLocation, Navigate, Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import _ from 'lodash';
 
@@ -15,10 +15,11 @@ function Lyrics() {
     
     return (
         <div>
-            <Button href="/">Back</Button>
+            <div className="text-center w-100 mb-3">
+                <Link to="/">Back to Search</Link>
+            </div>
             <div className="text-center">
-                <h1>"{ toTitleCase(songTitle) }"</h1>
-                <h2>by { toTitleCase(artist) }</h2>
+                <h1>"{ toTitleCase(songTitle) }"<br></br><span className="fs-4">by { toTitleCase(artist) }</span></h1>
                 <hr></hr>
                 <div>
                     {

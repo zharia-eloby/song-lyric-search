@@ -9,7 +9,7 @@ import { Row } from "react-bootstrap";
 function ErrorMessage(props) {
     return (
         <>
-            <p>{ props.message }</p>
+            <p className="error-message text-center fw-bold" role="alert">{ props.message }</p>
         </>
     )
 }
@@ -41,8 +41,17 @@ function Home() {
 
     return (
         <div>
-            <h1 className="text-center">Find song lyrics</h1>
+            <h1 className="text-center fw-bold">Find song lyrics</h1>
             <Form noValidate validated={error} onSubmit={handleSubmit}>
+                {
+                    error == 404 &&
+                        <ErrorMessage message="Lyrics not found. Please check your input and try again." />
+                }
+                {
+                    (error != 404 && error > 0) &&
+                        <ErrorMessage message="An error occurred. Please try again." />
+                }
+
                 <Form.Group className="mb-3" controlId="artistGroup">
                     <Form.Label>Artist</Form.Label>
                     <Form.Control type="text" onChange={(e) => setArtist(e.target.value)} required />
@@ -52,7 +61,7 @@ function Home() {
                 <Container fluid className="separator">
                     <Row>
                         <div className="col col-5 px-0"><hr></hr></div>
-                        <div className="col col-2 text-center">AND</div>
+                        <div className="col col-2 text-center">and</div>
                         <div className="col col-5 px-0"><hr></hr></div>
                     </Row>
                 </Container>
@@ -63,15 +72,9 @@ function Home() {
                     <Form.Control.Feedback type="invalid">Please enter a song title.</Form.Control.Feedback>
                 </Form.Group>
 
-                <Button type="submit">Search</Button>
-                {
-                    error == 404 &&
-                        <ErrorMessage message="Song not found. Please check your input and try again" />
-                }
-                {
-                    (error != 404 && error > 0) &&
-                        <ErrorMessage message="An error occurred. Please try again." />
-                }
+                <div className="mx-auto text-center">
+                    <Button className="w-50" type="submit">Search</Button>
+                </div>
             </Form>
         </div>
     );
