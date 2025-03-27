@@ -15,8 +15,7 @@ function ErrorMessage(props) {
 function Home() {
     const [artist, setArtist] = useState('');
     const [songTitle, setSongTitle] = useState('');
-    const [error, setErrorStatus] = useState(-1);
-    const [validated, setValidated] = useState(false);
+    const [error, setErrorStatus] = useState(undefined);
     const navigate = useNavigate();
 
     const handleSubmit = (event) => {
@@ -34,14 +33,14 @@ function Home() {
                 }
             });
         } else {
-            setValidated(true);
+            setErrorStatus(-1);
         }
     }
 
     return (
         <div className="w-75 mx-auto">
             <h1 className="text-center">Find song lyrics</h1>
-            <Form noValidate validated={validated} className="w-50 mx-auto" onSubmit={handleSubmit}>
+            <Form noValidate validated={error} className="w-50 mx-auto" onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="artistGroup">
                     <Form.Label>Artist</Form.Label>
                     <Form.Control type="text" onChange={(e) => setArtist(e.target.value)} required />
@@ -61,7 +60,7 @@ function Home() {
                 }
                 {
                     (error != 404 && error > 0) &&
-                        <ErrorMessage message="hello?" />
+                        <ErrorMessage message="An error occurred. Please try again." />
                 }
             </Form>
         </div>
