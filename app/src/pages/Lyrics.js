@@ -14,7 +14,7 @@ function Lyrics() {
     const { state: { songLyrics, artist, songTitle } = {}} = location;
     
     return (
-        <div className="w-75 mx-auto">
+        <div>
             <Button href="/">Back</Button>
             <div className="text-center">
                 <h1>"{ toTitleCase(songTitle) }"</h1>

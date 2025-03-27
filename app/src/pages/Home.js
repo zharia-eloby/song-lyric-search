@@ -40,9 +40,9 @@ function Home() {
     }
 
     return (
-        <div className="w-75 mx-auto">
+        <div>
             <h1 className="text-center">Find song lyrics</h1>
-            <Form noValidate validated={error} className="w-50 mx-auto" onSubmit={handleSubmit}>
+            <Form noValidate validated={error} onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="artistGroup">
                     <Form.Label>Artist</Form.Label>
                     <Form.Control type="text" onChange={(e) => setArtist(e.target.value)} required />

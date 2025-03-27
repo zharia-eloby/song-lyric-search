@@ -1,5 +1,8 @@
 import { Outlet } from "react-router-dom";
 import { Navbar } from "react-bootstrap";
+import { Container } from "react-bootstrap";
+import { Row } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 
 function Header() {
     return (
@@ -27,7 +30,13 @@ function BaseLayout() {
     return (
         <>
             <Header />
-            <Outlet />
+            <Container fluid>
+                <Row>
+                    <Col sm={12} md={8} xl={6} className="mx-auto">
+                        <Outlet />
+                    </Col>
+                </Row>
+            </Container>  
             <Footer />
         </>
     );
