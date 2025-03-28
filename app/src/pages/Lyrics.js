@@ -5,6 +5,15 @@ function toTitleCase(str) {
     return str.split(' ').map((word) => _.capitalize(word.toLowerCase())).join(' ');
 }
 
+function BackLink(props) {
+    const classNames = "w-100 " + props.classNames;
+    return (
+        <div className={classNames}>
+            <Link to="/">&lt; Back to Search</Link>
+        </div>
+    )
+}
+
 function LyricLine(props) {
     if (props.line.length == 0) {
         return <br key={props.key}></br>
@@ -20,11 +29,9 @@ function Lyrics() {
     const { state: { songLyrics, artist, songTitle } = {}} = location;
     
     return (
-        <div>
-            <div className="text-center w-100 mb-5">
-                <Link to="/">&lt; Back to Search</Link>
-            </div>
-            <div className="text-center">
+        <div className="text-center">
+            <BackLink classNames="mb-4" />
+            <div>
                 <h1>
                     "{ toTitleCase(songTitle) }"
                     <br></br>
@@ -41,9 +48,7 @@ function Lyrics() {
                     }
                 </div>
             </div>
-            <div className="text-center w-100 mt-5">
-                <Link to="/">&lt; Back to Search</Link>
-            </div>
+            <BackLink classNames="mt-4" />
         </div>
     )
 }

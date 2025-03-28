@@ -1,0 +1,49 @@
+$section-spacing: 3em;
+$accent-color: thistle;
+$md-breakpoint: 768px;
+
+body {
+  background-color: whitesmoke;
+  color: black;
+}
+
+header, footer, button {
+  background-color: $accent-color;
+}
+
+@media (min-width: $md-breakpoint) {
+  button:hover {
+    background-color: rgb(169, 125, 169);
+    color: white;
+  }
+}
+
+@media (max-width: $md-breakpoint) {
+  button:active {
+    background-color: rgb(169, 125, 169);
+    color: white;
+  }
+}
+
+header {
+  margin-bottom: $section-spacing;
+}
+
+footer {
+  margin-top: $section-spacing;
+}
+
+p {
+  margin: 0px;
+  line-height: 2em;
+}
+
+#lyrics > p {
+  line-height: 1.5em;
+}
+
+.error-message, .invalid-feedback {
+  color: red;
+}
+
+

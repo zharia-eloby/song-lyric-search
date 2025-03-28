@@ -47,7 +47,7 @@ function Home() {
 
     return (
         <div>
-            <h1 className="text-center fw-bold">Find song lyrics</h1>
+            <h1 className="text-center fw-bold">Search</h1>
             <p className="fs-5 fst-italic text-center">
                 Enter an artist and song title and we'll see if we can find the lyrics!
             </p>
@@ -82,7 +82,7 @@ function Home() {
                 </Form.Group>
 
                 <div className="mx-auto text-center">
-                    <Button className="w-50" type="submit">Search</Button>
+                    <button className="w-50 rounded rounded-3 py-2 border-0 fw-bold" type="submit">Search</button>
                 </div>
             </Form>
         </div>
