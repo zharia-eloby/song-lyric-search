@@ -34,15 +34,19 @@ function Footer() {
 function BaseLayout() {
     return (
         <>
-            <Header />
-            <Container fluid>
-                <Row>
-                    <Col sm={12} md={8} xl={6} className="mx-auto">
-                        <Outlet />
-                    </Col>
-                </Row>
-            </Container>  
-            <Footer />
+            <div className="vh-100">
+                <div className="d-flex flex-column align-items-stretch h-100">
+                    <Header />
+                    <Container className="flex-grow-1" fluid>
+                        <Row>
+                            <Col sm={12} md={8} xl={6} className="mx-auto">
+                                <Outlet />
+                            </Col>
+                        </Row>
+                    </Container>  
+                    <Footer />
+                </div>
+            </div>
         </>
     );
 }
