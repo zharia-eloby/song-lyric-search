@@ -33,7 +33,7 @@ function Lyrics() {
 
                 <hr></hr>
 
-                <div>
+                <div id="lyrics">
                     {
                         songLyrics.map((line, index) =>
                             <LyricLine line={line} key={index} />
@@ -41,7 +41,7 @@ function Lyrics() {
                     }
                 </div>
             </div>
-            <div className="text-center w-100 mb-5">
+            <div className="text-center w-100 mt-5">
                 <Link to="/">&lt; Back to Search</Link>
             </div>
         </div>

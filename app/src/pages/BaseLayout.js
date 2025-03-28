@@ -9,7 +9,9 @@ function Header() {
         <header className="p-3">
             <Navbar>
                 <Navbar.Brand className="fs-4">
-                    LyricSearch
+                    <img src="/brand-icon.png" width="50em" height="50em" alt="Zharia Eloby logo"></img>
+                    {' '}
+                    <span className="fst-italic">A site for finding song lyrics</span>
                 </Navbar.Brand>
             </Navbar>
         </header>
