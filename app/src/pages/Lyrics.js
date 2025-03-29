@@ -16,9 +16,9 @@ function BackLink(props) {
 
 function LyricLine(props) {
     if (props.line.length == 0) {
-        return <br key={props.key}></br>
+        return <br></br>
     }
-    return <p key={props.key}>{ props.line }</p>
+    return <p>{ props.line }</p>
 }
 
 function Lyrics() {
@@ -38,15 +38,17 @@ function Lyrics() {
                     <span className="fs-4">by { toTitleCase(artist) }</span>
                 </h1>
 
-                <hr></hr>
+                <hr className="separator"></hr>
 
-                <div id="lyrics">
+                <div>
                     {
-                        songLyrics.map((line, index) =>
-                            <LyricLine line={line} key={index} />
+                        songLyrics.map((line) =>
+                            <LyricLine line={line} />
                         )
                     }
                 </div>
+
+                <hr className="separator"></hr>
             </div>
             <BackLink classNames="mt-4" />
         </div>
