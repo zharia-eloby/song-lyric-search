@@ -2,20 +2,17 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import { Container } from "react-bootstrap";
-import { Row } from "react-bootstrap";
 
 function formatLyrics(lyricsArr) {
     const newArr = lyricsArr.split(/\n\n|\r\n/);
-    console.log(newArr);
     return newArr;
 }
 
 function ErrorMessage(props) {
     return (
         <>
-            <p className="error-message text-center fw-bold" role="alert">{ props.message }</p>
+            <p className="error-message text-center fw-bold py-2" role="alert">{ props.message }</p>
         </>
     )
 }
@@ -47,8 +44,8 @@ function Home() {
 
     return (
         <div>
-            <h1 className="text-center fw-bold">Search</h1>
-            <p className="fs-5 fst-italic text-center">
+            <h1 className="text-center fw-bold">Find Song Lyrics</h1>
+            <p className="fs-6 text-center my-3">
                 Enter an artist and song title and we'll see if we can find the lyrics!
             </p>
             <Form noValidate validated={error} onSubmit={handleSubmit}>
@@ -61,27 +58,25 @@ function Home() {
                         <ErrorMessage message="An error occurred. Please try again." />
                 }
 
-                <Form.Group className="mb-3" controlId="artistGroup">
+                <Form.Group className="mb-2" controlId="artistGroup">
                     <Form.Label>Artist</Form.Label>
                     <Form.Control type="text" onChange={(e) => setArtist(e.target.value)} required />
                     <Form.Control.Feedback type="invalid">Please enter an artist.</Form.Control.Feedback>
                 </Form.Group>
 
-                <Container fluid className="separator">
-                    <Row>
-                        <div className="col col-5 px-0"><hr></hr></div>
-                        <div className="col col-2 text-center">and</div>
-                        <div className="col col-5 px-0"><hr></hr></div>
-                    </Row>
+                <Container fluid className="d-flex flex-row px-0 align-items-center">
+                    <div className="w-100"><hr></hr></div>
+                    <div className="px-2"><span>and</span></div>
+                    <div className="w-100"><hr></hr></div>
                 </Container>
 
-                <Form.Group className="mb-3" controlId="songTitleGroup">
+                <Form.Group controlId="songTitleGroup">
                     <Form.Label>Song Title</Form.Label>
                     <Form.Control type="text" onChange={(e) => setSongTitle(e.target.value)} required />
                     <Form.Control.Feedback type="invalid">Please enter a song title.</Form.Control.Feedback>
                 </Form.Group>
 
-                <div className="mx-auto text-center">
+                <div className="mt-3 mx-auto text-center">
                     <button className="w-50 rounded rounded-3 py-2 border-0 fw-bold" type="submit">Search</button>
                 </div>
             </Form>
