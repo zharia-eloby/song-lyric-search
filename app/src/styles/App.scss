@@ -1,28 +1,27 @@
-$section-spacing: 3em;
-$accent-color: thistle;
+$section-spacing: 5em;
 $md-breakpoint: 768px;
+$bg-color: lavender;
+$text-color: black;
+$primary-color: darkslateblue;
+$primary-text-color: lavender;
+$hover-color: midnightblue;
 
 body {
-  background-color: whitesmoke;
+  background-color: $bg-color;
   color: black;
+  font-family: "Capriola";
+}
+
+a {
+  color: $primary-color;
 }
 
 header, footer, button {
-  background-color: $accent-color;
+  background-color: $primary-color;
 }
 
-@media (min-width: $md-breakpoint) {
-  button:hover {
-    background-color: rgb(169, 125, 169);
-    color: white;
-  }
-}
-
-@media (max-width: $md-breakpoint) {
-  button:active {
-    background-color: rgb(169, 125, 169);
-    color: white;
-  }
+.navbar-brand, .navbar-brand:hover, footer, button {
+  color: $primary-text-color;
 }
 
 header {
@@ -33,17 +32,47 @@ footer {
   margin-top: $section-spacing;
 }
 
-p {
-  margin: 0px;
-  line-height: 2em;
+footer > p > a {
+  color: powderblue;
 }
 
-#lyrics > p {
+hr {
+  border: none;
+  background-color: $primary-color;
+  height: 2px;
+}
+
+.separator {
+  margin: 2em 0em 2em 0em;
+}
+
+@media (min-width: $md-breakpoint) {
+  button:hover {
+    background-color: $hover-color;
+  }
+
+  a:hover {
+    color: $hover-color;
+  }
+}
+
+@media (max-width: $md-breakpoint) {
+  button:active {
+    background-color: $hover-color;
+  }
+
+  a:active {
+    color: $hover-color;
+  }
+}
+
+p {
+  margin: 0px;
   line-height: 1.5em;
 }
 
 .error-message, .invalid-feedback {
-  color: red;
+  color: maroon;
 }
 
 
