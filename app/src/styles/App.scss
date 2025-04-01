@@ -1,44 +1,38 @@
-$section-spacing: 5em;
-$md-breakpoint: 768px;
-$bg-color: lavender;
-$text-color: black;
-$primary-color: darkslateblue;
-$primary-text-color: lavender;
-$hover-color: midnightblue;
+@use "variables";
 
 body {
-  background-color: $bg-color;
-  color: black;
+  background-color: variables.$primary-bg-color;
+  color: variables.$primary-text-color;
   font-family: "Capriola";
 }
 
 a {
-  color: $primary-color;
+  color: variables.$primary-link-color;
 }
 
 header, footer, button {
-  background-color: $primary-color;
+  background-color: variables.$secondary-bg-color;
 }
 
 .navbar-brand, .navbar-brand:hover, footer, button {
-  color: $primary-text-color;
+  color: variables.$secondary-text-color;
 }
 
 header {
-  margin-bottom: $section-spacing;
+  margin-bottom: variables.$section-spacing;
 }
 
 footer {
-  margin-top: $section-spacing;
+  margin-top: variables.$section-spacing;
 }
 
 footer > p > a {
-  color: powderblue;
+  color: variables.$secondary-link-color;
 }
 
 hr {
   border: none;
-  background-color: $primary-color;
+  background-color: variables.$secondary-bg-color;
   height: 2px;
 }
 
@@ -46,23 +40,23 @@ hr {
   margin: 2em 0em 2em 0em;
 }
 
-@media (min-width: $md-breakpoint) {
+@media (min-width: variables.$md-breakpoint) {
   button:hover {
-    background-color: $hover-color;
+    background-color: variables.$primary-link-hover-color;
   }
 
   a:hover {
-    color: $hover-color;
+    color: variables.$primary-link-hover-color;
   }
 }
 
-@media (max-width: $md-breakpoint) {
+@media (max-width: variables.$md-breakpoint) {
   button:active {
-    background-color: $hover-color;
+    background-color: variables.$primary-link-hover-color;
   }
 
   a:active {
-    color: $hover-color;
+    color: variables.$primary-link-hover-color;
   }
 }
 
@@ -72,7 +66,7 @@ p {
 }
 
 .error-message, .invalid-feedback {
-  color: maroon;
+  color: variables.$error-color;
 }
 
 
