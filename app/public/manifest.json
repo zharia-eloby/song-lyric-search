@@ -3,8 +3,6 @@
   "name": "Find Song Lyrics",
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#483d8b",
-  "background_color": "#e6e6fa",
   "manifest_version": 1,
   "version": "0.0"
 }
