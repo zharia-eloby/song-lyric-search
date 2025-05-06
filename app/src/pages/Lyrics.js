@@ -1,4 +1,4 @@
-import { useLocation, Navigate, Link } from "react-router-dom";
+import { useLocation, Navigate, Link } from "react-router";
 import _ from 'lodash';
 
 function toTitleCase(str) {
