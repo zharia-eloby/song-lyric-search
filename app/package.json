@@ -19,7 +19,7 @@
     "start": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "test": "jest"
+    "test": "jest --verbose"
   },
   "eslintConfig": {
     "extends": [
