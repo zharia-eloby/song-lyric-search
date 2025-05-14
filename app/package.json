@@ -74,8 +74,8 @@
     "vite": "^6.3.5"
   },
   "settings": {
-      "react": {
-        "version": "detect"
-      }
+    "react": {
+      "version": "detect"
+    }
   }
 }
