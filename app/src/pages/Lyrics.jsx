@@ -30,17 +30,16 @@ function Lyrics() {
     
   return (
     <div className="text-center">
-      <BackLink classNames="mb-4" />
+      <BackLink classNames="mb-4" data-testid="back-to-home-link-top" />
       <div>
-        <h1>
-          &quot;{ toTitleCase(songTitle) }&quot;
-          <br></br>
-          <span className="fs-4">by { toTitleCase(artist) }</span>
-        </h1>
+        <div>
+          <h1 data-testid="song-title">&quot;{ toTitleCase(songTitle) }&quot;</h1>
+          <p className="fs-4" data-testid="artist-name">by { toTitleCase(artist) }</p>
+        </div>
 
         <hr className="separator"></hr>
 
-        <div>
+        <div data-testid="lyrics">
           {
             songLyrics.map((line, index) =>
               <LyricLine key={index} line={line} />
@@ -50,7 +49,7 @@ function Lyrics() {
 
         <hr className="separator"></hr>
       </div>
-      <BackLink classNames="mt-4" />
+      <BackLink classNames="mt-4" data-testid="back-to-home-link-bottom" />
     </div>
   );
 }

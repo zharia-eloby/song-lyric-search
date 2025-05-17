@@ -51,17 +51,17 @@ function Home() {
       <Form noValidate validated={error} onSubmit={handleSubmit}>
         {
           error == 404 &&
-                        <ErrorMessage message="Lyrics not found. Please check your input and try again." />
+                        <ErrorMessage message="Lyrics not found. Please check your input and try again." data-testid="not-found-error" />
         }
         {
           (error != 404 && error > 0) &&
-                        <ErrorMessage message="An error occurred. Please try again." />
+                        <ErrorMessage message="An error occurred. Please try again." data-testid="api-error" />
         }
 
         <Form.Group className="mb-2" controlId="artistGroup">
           <Form.Label>Artist</Form.Label>
-          <Form.Control type="text" onChange={(e) => setArtist(e.target.value)} required />
-          <Form.Control.Feedback type="invalid">Please enter an artist.</Form.Control.Feedback>
+          <Form.Control type="text" onChange={(e) => setArtist(e.target.value)} required data-testid="artist-input-field" />
+          <Form.Control.Feedback type="invalid" data-testid="artist-input-invalid">Please enter an artist.</Form.Control.Feedback>
         </Form.Group>
 
         <Container fluid className="d-flex flex-row px-0 align-items-center">
@@ -72,12 +72,12 @@ function Home() {
 
         <Form.Group controlId="songTitleGroup">
           <Form.Label>Song Title</Form.Label>
-          <Form.Control type="text" onChange={(e) => setSongTitle(e.target.value)} required />
-          <Form.Control.Feedback type="invalid">Please enter a song title.</Form.Control.Feedback>
+          <Form.Control type="text" onChange={(e) => setSongTitle(e.target.value)} required data-testid="song-title-input-field" />
+          <Form.Control.Feedback type="invalid" data-testid="song-title-input-invalid">Please enter a song title.</Form.Control.Feedback>
         </Form.Group>
 
         <div className="mt-3 mx-auto text-center">
-          <button className="w-50 rounded rounded-3 py-2 border-0 fw-bold" type="submit">Search</button>
+          <button className="w-50 rounded rounded-3 py-2 border-0 fw-bold" type="submit" data-testid="submit-button">Search</button>
         </div>
       </Form>
     </div>
