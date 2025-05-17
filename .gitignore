@@ -29,3 +29,4 @@ node_modules
 amplify_outputs*
 amplifyconfiguration*
 /.vscode
+/app/cypress/screenshots
