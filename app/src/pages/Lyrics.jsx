@@ -29,7 +29,7 @@ function Lyrics() {
   const { state: { songLyrics, artist, songTitle } = {}} = location;
     
   return (
-    <div className="text-center" data-testid="lyrics-page">
+    <main className="text-center" data-testid="lyrics-page" role="main">
       <BackLink classNames="mb-4" id="back-to-home-link-top" />
       <div>
         <div>
@@ -50,7 +50,7 @@ function Lyrics() {
         <hr className="separator"></hr>
       </div>
       <BackLink classNames="mt-4" id="back-to-home-link-bottom" />
-    </div>
+    </main>
   );
 }
 

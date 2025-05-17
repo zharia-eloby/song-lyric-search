@@ -43,7 +43,7 @@ function Home() {
   };
 
   return (
-    <div data-testid="home-page">
+    <main data-testid="home-page" role="main">
       <h1 className="text-center fw-bold">Find Song Lyrics</h1>
       <p className="fs-6 text-center my-3">
         Enter an artist and song title and we&apos;ll see if we can find the lyrics!
@@ -80,7 +80,7 @@ function Home() {
           <button className="w-50 rounded rounded-3 py-2 border-0 fw-bold" type="submit" data-testid="submit-button">Search</button>
         </div>
       </Form>
-    </div>
+    </main>
   );
 }
 
