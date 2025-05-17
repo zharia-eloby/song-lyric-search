@@ -12,7 +12,7 @@ function formatLyrics(lyricsArr) {
 function ErrorMessage(props) {
   return (
     <>
-      <p className="error-message text-center fw-bold py-2" role="alert">{ props.message }</p>
+      <p className="error-message text-center fw-bold py-2" role="alert" data-testid={props.type}>{ props.message }</p>
     </>
   );
 }
@@ -51,11 +51,11 @@ function Home() {
       <Form noValidate validated={error} onSubmit={handleSubmit}>
         {
           error == 404 &&
-                        <ErrorMessage message="Lyrics not found. Please check your input and try again." data-testid="not-found-error" />
+                        <ErrorMessage message="Lyrics not found. Please check your input and try again." type="not-found-error" />
         }
         {
           (error != 404 && error > 0) &&
-                        <ErrorMessage message="An error occurred. Please try again." data-testid="api-error" />
+                        <ErrorMessage message="An error occurred. Please try again." type="api-error" />
         }
 
         <Form.Group className="mb-2" controlId="artistGroup">
