@@ -9,16 +9,28 @@ describe('Home Page', () => {
   context('When user searches for song lyrics', () => {
     context('with valid input', () => {
       it('directs to the lyrics page', () => {
+        cy.intercept('GET', 'https://api.lyrics.ovh/v1/**', { 
+          statusCode: 200,
+          body: { 
+            status: 200, 
+            lyrics: "these are the lyrics for testing purposes" 
+          }
+        }).as('lyricsResponse')
+
         cy.get(home.artistInputField).type('Etta James')
         cy.get(home.songTitleInputField).type('At Last')
         cy.get(home.submitButton).click()
-        cy.get(lyrics.lyrics).should('be.visible')
-        cy.get(lyrics.artistName)
-          .should('be.visible')
-          .contains('Etta James')
+        cy.wait('@lyricsResponse')
+
         cy.get(lyrics.songTitle)
           .should('be.visible')
           .contains('At Last')
+        cy.get(lyrics.artistName)
+          .should('be.visible')
+          .contains('Etta James')
+        cy.get(lyrics.lyrics)
+          .should('be.visible')
+          .contains('these are the lyrics for testing purposes')
       })
     })
 
@@ -49,7 +61,7 @@ describe('Home Page', () => {
           statusCode: 500,
           body: { status: 500 }
         }).as('apiErrorResponse')
-        
+
         cy.get(home.artistInputField).type('Etta James')
         cy.get(home.songTitleInputField).type('At Last')
         cy.get(home.submitButton).click()
