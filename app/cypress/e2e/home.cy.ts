@@ -3,6 +3,7 @@ import lyrics from '../support/pages/lyrics';
 
 beforeEach(() => {
   cy.visit(home.url)
+  cy.get(home.content).should('be.visible')
 })
 
 describe('Home Page', () => {
@@ -22,6 +23,7 @@ describe('Home Page', () => {
         cy.get(home.submitButton).click()
         cy.wait('@lyricsResponse')
 
+        cy.get(lyrics.content).should('be.visible')
         cy.get(lyrics.songTitle)
           .should('be.visible')
           .contains('At Last')
