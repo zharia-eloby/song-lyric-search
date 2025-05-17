@@ -1,5 +1,6 @@
 class Home {
   url: string;
+  content: string;
   artistInputField: string;
   songTitleInputField: string;
   submitButton: string;
@@ -10,6 +11,8 @@ class Home {
 
   constructor() {
     this.url = '/';
+
+    this.content = '[data-testid="home-page"]';
 
     // form
     this.artistInputField = '[data-testid="artist-input-field"]';

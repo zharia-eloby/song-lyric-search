@@ -8,7 +8,7 @@ function toTitleCase(str) {
 function BackLink(props) {
   const classNames = "w-100 " + props.classNames;
   return (
-    <div className={classNames}>
+    <div className={classNames} data-testid={props.id}>
       <Link to="/">&lt; Back to Search</Link>
     </div>
   );
@@ -29,8 +29,8 @@ function Lyrics() {
   const { state: { songLyrics, artist, songTitle } = {}} = location;
     
   return (
-    <div className="text-center">
-      <BackLink classNames="mb-4" data-testid="back-to-home-link-top" />
+    <div className="text-center" data-testid="lyrics-page">
+      <BackLink classNames="mb-4" id="back-to-home-link-top" />
       <div>
         <div>
           <h1 data-testid="song-title">&quot;{ toTitleCase(songTitle) }&quot;</h1>
@@ -49,7 +49,7 @@ function Lyrics() {
 
         <hr className="separator"></hr>
       </div>
-      <BackLink classNames="mt-4" data-testid="back-to-home-link-bottom" />
+      <BackLink classNames="mt-4" id="back-to-home-link-bottom" />
     </div>
   );
 }
