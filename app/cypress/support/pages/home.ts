@@ -1,10 +1,12 @@
 class Home {
+  url: string;
   artistInputField: string;
   songTitleInputField: string;
   submitButton: string;
   artistInvalidError: string;
   songTitleInvalidError: string;
-  url: string;
+  apiError: string;
+  notFoundError: string;
 
   constructor() {
     this.url = '/';
@@ -17,6 +19,8 @@ class Home {
     // error messages
     this.artistInvalidError = '[data-testid="artist-input-invalid"]';
     this.songTitleInvalidError = '[data-testid="song-title-input-invalid"]';
+    this.apiError = '[data-testid="api-error"]';
+    this.notFoundError = '[data-testid="not-found-error"]';
   }
 }
 
