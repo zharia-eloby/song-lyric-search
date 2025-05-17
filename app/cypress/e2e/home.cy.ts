@@ -1,3 +1,4 @@
+import logA11yViolations from '../support/a11y';
 import home from '../support/pages/home';
 import lyrics from '../support/pages/lyrics';
 
@@ -7,6 +8,11 @@ beforeEach(() => {
 })
 
 describe('Home Page', () => {
+  it('has no a11y violations', () => {
+    cy.injectAxe()
+    cy.checkA11y(null, null, logA11yViolations)
+  })
+
   context('When user searches for song lyrics', () => {
     context('with valid input', () => {
       it('directs to the lyrics page', () => {

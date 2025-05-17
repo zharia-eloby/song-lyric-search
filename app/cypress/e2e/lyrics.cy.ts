@@ -1,5 +1,6 @@
 import home from "../support/pages/home";
 import lyrics from "../support/pages/lyrics";
+import logA11yViolations from "../support/a11y";
 
 beforeEach(() => {
     cy.visit('/')
@@ -11,6 +12,11 @@ beforeEach(() => {
 })
 
 describe('Lyrics Page', () => {
+    it('has no a11y violations', () => {
+        cy.injectAxe()
+        cy.checkA11y(null, null, logA11yViolations)
+    })
+
     context('User is directed to the home page', () => {
         it('when selecting the top back link', () => {
             cy.get(lyrics.topBackLink).click()
