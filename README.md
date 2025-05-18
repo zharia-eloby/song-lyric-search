@@ -8,9 +8,20 @@ an artist name and song title.
 
 This has been deployed using AWS Amplify. Check it out here! : [https://www.find-song-lyrics.com/](https://www.find-song-lyrics.com/).
 
-### To run locally:
+## How to setup locally:
 1. Download or clone this repo
 2. Open a terminal
 3. `cd app`
-4. `npm start`
+4. `npm i`
 
+### To run the site:
+1. `cd app`
+2. `npm start`
+
+### To run the integration tests:
+1. `cd app`
+2. `npm run test:ui`
+
+### To run the unit tests:
+1. `cd app`
+2. `npm run test:unit`
