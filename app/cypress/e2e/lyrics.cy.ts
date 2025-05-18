@@ -27,5 +27,11 @@ describe('Lyrics Page', () => {
             cy.get(lyrics.bottomBackLink).click()
             cy.get(home.content).should('be.visible')
         })
+        
+        it('when visiting /lyrics without song data', () => {
+            cy.visit('/')
+            cy.visit('/lyrics')
+            cy.get(home.content).should('be.visible')
+        })
     })
 })
